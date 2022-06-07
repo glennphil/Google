@@ -69,10 +69,10 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
 }
 
 const Heading = ({ value }) => (
-  <>
-    <center><h1 className="heading">{t("sign-in.password.heading")}&nbsp; firstName</h1></center>
-    <center><div className="email-name">{value.email}</div></center>
-  </>
+  <center>
+    <h1 className="heading">{t("sign-in.password.heading")}&nbsp; firstName</h1>
+    <div className="email-name">{value.email}</div>
+  </center>
 );
 
 const Form = ({ handleSubmit, onSubmit, handleChange, value, register, matchPassword }) => (

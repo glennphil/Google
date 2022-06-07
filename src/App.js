@@ -24,7 +24,7 @@ export default function App() {
     if (user === null) {
       return <Outlet />
     }
-    return <Navigate to="/myaccount/" />
+    return <Navigate to="/Google/myaccount/" />
   }
 
   const NoUserRoute = () => {
@@ -32,7 +32,7 @@ export default function App() {
     if (user !== null) {
       return <Outlet />
     }
-    return <Navigate to="/signin/" />
+    return <Navigate to="/Google/signin/" />
   }
 
   return (
@@ -45,7 +45,7 @@ export default function App() {
     <UserContextProvider>
       <Router>
         <Routes>
-          <Route exact path="/" element={() => (<Navigate to='/Google/' />)} />
+          <Route path="/" element={() => (<Navigate to='/Google/' />)} />
           <Route path="/Google/" element={<Search />}/>
           <Route path="/Google/*" element={<PageNotFound />} />
           <Route element={<UserRoute />}>

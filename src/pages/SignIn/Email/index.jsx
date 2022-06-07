@@ -96,7 +96,7 @@ const Note = () => (
 );
 
 const CreateAccount = () => (
-  <Link to="/signup/">
+  <Link to="/Google/signup/">
     <button className="create-account">
       {t('sign-in.email.create_account')}
     </button>
