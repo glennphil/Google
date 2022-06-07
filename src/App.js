@@ -43,7 +43,7 @@ export default function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
     <GlobalStyles />
     <UserContextProvider>
-      <Router>
+      <Router basename="/Google/">
         <Routes>
           <Route path="/" element={() => (<Navigate to='/Google/' />)} />
           <Route path="/Google/" element={<Search />}/>
