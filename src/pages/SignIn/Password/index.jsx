@@ -11,17 +11,17 @@ import './../../../components/SignPage/Heading/style.css';
 import './../../../components/SignPage/SignInForm/style.css';
 import './../../../components/SignPage/ShowPassword/style.css';
 
-export default function SignInPassword({ Logo, value, setValue, register, handleSubmit, watch, errors, Next }) {
+export default function SignInPassword({ Logo, value, setValue, register, handleSubmit, errors, Next }) {
   const { setUser } = useContext(UserContext);
 
   const currentUser = async () => {
-    let URL = "http://localhost:5000/users?email=" + value.email;
+    let URL = "https://my-json-server.typicode.com/paq000/google/users?email=" + value.email;
     let response = await axios.get(URL);
     return response.data;
   };
 
   async function matchPassword() {
-    const response = await axios.get("http://localhost:5000/users?email=" + value.email);
+    const response = await axios.get("https://my-json-server.typicode.com/paq000/google/users?email=" + value.email);
     const userInput = (value.password);
 
     if (response.data[0].password === userInput) {
@@ -32,7 +32,7 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
 
   const onSubmit = async() => {
     setTimeout(function () {
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "http://paq000.github.com/Google/";
     }, 250);
     const user = await currentUser();
       setUser(user);
@@ -70,8 +70,12 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
 
 const Heading = ({ value }) => (
   <center>
-    <h1 className="heading">{t("sign-in.password.heading")}&nbsp; firstName</h1>
-    <div className="email-name">{value.email}</div>
+    <h1 className="heading">
+      {t("sign-in.password.heading")}&nbsp; firstName
+    </h1>
+    <div className="email-name">
+      {value.email}
+    </div>
   </center>
 );
 

@@ -26,7 +26,7 @@ export default function Form({ value, setValue, register, handleSubmit, errors, 
   const emptyStringRegex = /^(?![\s\S])/; // '' //
 
   async function uniqueEmail(e) {
-    const response = await axios.get("http://localhost:5000/users/");
+    const response = await axios.get("https://my-json-server.typicode.com/paq000/google/users/");
     const userInput = (value.email).toLowerCase();
 
     for (let i = 0; i < response.data.length; i++) {

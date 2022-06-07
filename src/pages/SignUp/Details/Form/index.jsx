@@ -8,7 +8,7 @@ export default function Form({ value, setValue, register, handleSubmit, errors, 
   const { setUser } = useContext(UserContext);
 
   const currentUser = async () => {
-    let URL = "http://localhost:5000/users?email=" + value.email;
+    let URL = "https://my-json-server.typicode.com/paq000/google/usersemail=" + value.email;
     let response = await axios.get(URL);
     return response.data;
   };
@@ -17,7 +17,7 @@ export default function Form({ value, setValue, register, handleSubmit, errors, 
     try {
       await axios({
         method: "post",
-        url: "http://localhost:5000/users",
+        url: "https://my-json-server.typicode.com/paq000/google/users/",
         data: {
           firstName: value.firstName,
           lastName: value.lastName,
@@ -31,7 +31,7 @@ export default function Form({ value, setValue, register, handleSubmit, errors, 
         headers: { "Content-Type": "application/json"},
       });
       setTimeout(function () {
-        window.location.href = "http://localhost:3000/";
+        window.location.href = "http://paq000.github.com/Google/";
       }, 250);
     } catch(error) {
       console.log(error.response.data)
