@@ -45,22 +45,23 @@ export default function App() {
     <UserContextProvider>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Search />}/>
+          <Route exact path="/" element={() => (<Navigate to='/Google/' />)} />
+          <Route exact path="/Google/" element={<Search />}/>
           <Route path="*" element={<PageNotFound />} />
           <Route element={<UserRoute />}>
-            <Route path="/signin/" element={<SignIn />} />
-            <Route path="/signup/" element={<SignUp />} />
+            <Route path="/Google/signin/" element={<SignIn />} />
+            <Route path="/Google/signup/" element={<SignUp />} />
           </Route>
           <Route element={<NoUserRoute />}>
-            <Route path="/myaccount/" element={<Account />} />
-            <Route path="/myaccount/personalinfo/" element={<PersonalInfo />} />
-            <Route path="/myaccount/data-and-personalization/" element={<DataPrivacy />} />
-            <Route path="/myaccount/deleteaccount/" element={<DeleteAccount />} />
-            <Route path="/myaccount/name/" element={<Name />} />
-            <Route path="/myaccount/birthday/" element={<Birthday />} />
-            <Route path="/myaccount/gender/" element={<Gender />} />
-            <Route path="/myaccount/email/" element={<Email />} />
-            <Route path="/myaccount/password/" element={<Password />} />
+            <Route path="/Google/myaccount/" element={<Account />} />
+            <Route path="/Google/myaccount/personalinfo/" element={<PersonalInfo />} />
+            <Route path="/Google/myaccount/data-and-personalization/" element={<DataPrivacy />} />
+            <Route path="/Google/myaccount/deleteaccount/" element={<DeleteAccount />} />
+            <Route path="/Google/myaccount/name/" element={<Name />} />
+            <Route path="/Google/myaccount/birthday/" element={<Birthday />} />
+            <Route path="/Google/myaccount/gender/" element={<Gender />} />
+            <Route path="/Google/myaccount/email/" element={<Email />} />
+            <Route path="/Google/myaccount/password/" element={<Password />} />
           </Route>
         </Routes>
       </Router>

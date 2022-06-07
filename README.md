@@ -1,4 +1,4 @@
-# google-front
+# Google
 
 This project was bootstrapped with React. Backend was made using JSON server. Images are by Google, icons are from TailWind's HeroIcon package. 
 
