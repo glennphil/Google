@@ -31,7 +31,7 @@ export default function Form({ value, setValue, register, handleSubmit, errors, 
         headers: { "Content-Type": "application/json"},
       });
       setTimeout(function () {
-        window.location.href = "http://paq000.github.com/Google/";
+        window.location.href = "http://paq000.github.io/Google/";
       }, 250);
     } catch(error) {
       console.log(error.response.data)

@@ -45,7 +45,7 @@ export const ErrorLogo = () => (
 )
 
 export const SignInInstead = () => (
-  <Link to="/signin/">
+  <Link to="/Google/signin/">
     <button className="create-account">
       {t("sign-up.email.instead")}
     </button>
