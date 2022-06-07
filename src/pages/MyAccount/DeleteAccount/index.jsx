@@ -77,7 +77,7 @@ const SubHeading = () => (
   <div className="nav-contain-blue nav-contain-no-bord">
     <div className="navbar-form-wrap">
       <div className="account-subhead">
-        <Link to="/Google/myaccount/data-and-personalization/">
+        <Link to="/myaccount/data-and-personalization/">
           <div className="back-arrow">
             <ArrowLeftIcon className="back-arrow-icon"/>
           </div>
@@ -118,7 +118,7 @@ const DeleteInput = ({ register, setAgree }) => (
 const Buttons = ({ agree }) => (
   <div className="form-button-row">
     <button className="cancel">
-      <Link to="/Google/myaccount/data-and-personalization/" className="cancel-link no-deco">
+      <Link to="/myaccount/data-and-personalization/" className="cancel-link no-deco">
         {t("cancel")}
       </Link>
     </button>

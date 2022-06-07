@@ -41,7 +41,7 @@ const Url = () => (
 );
 
 const Logo = () => (
-  <Link to="/Google/">
+  <Link to="/">
     <picture src="" alt="logo" className="notfound-logo" />
   </Link> 
 );

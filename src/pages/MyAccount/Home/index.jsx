@@ -68,7 +68,7 @@ const Welcome = ({ letter, firstName, lastName }) => (
 )
 
 const PrivacyAndPersonalization = () => (
-  <Link exact to="/Google/myaccount/data-and-personalization/" className="no-deco flex-link">
+  <Link exact to="/myaccount/data-and-personalization/" className="no-deco flex-link">
     <section className="welcome-card">
       <div className="welcome-card-top">
         <div className="inner-card-row">
@@ -91,7 +91,7 @@ const PrivacyAndPersonalization = () => (
 )
 
 const PersonalInfo = () => (
-  <Link exact to="/Google/myaccount/personalinfo/" className="no-deco flex-link account-bottom-marg">
+  <Link exact to="/myaccount/personalinfo/" className="no-deco flex-link account-bottom-marg">
     <section className="welcome-card">
       <div className="welcome-card-top">
         <div className="inner-card-row">
@@ -120,7 +120,7 @@ export const Arrow = () => (
 )
 
 export const BackArrow = () => (
-  <Link to="/Google/myaccount/personalinfo/">
+  <Link to="/myaccount/personalinfo/">
     <div className="back-arrow">
       <ArrowLeftIcon className="back-arrow-icon"/>
     </div>
@@ -129,7 +129,7 @@ export const BackArrow = () => (
 
 export const Cancel = () => (
   <button className="cancel">
-    <Link to="/Google/myaccount/personalinfo/" className="cancel-link no-deco">
+    <Link to="/myaccount/personalinfo/" className="cancel-link no-deco">
       {t("cancel")}
     </Link>
   </button>

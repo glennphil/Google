@@ -24,7 +24,7 @@ export default function App() {
     if (user === null) {
       return <Outlet />
     }
-    return <Navigate to="/Google/myaccount/" />
+    return <Navigate to="/myaccount/" />
   }
 
   const NoUserRoute = () => {
@@ -32,7 +32,7 @@ export default function App() {
     if (user !== null) {
       return <Outlet />
     }
-    return <Navigate to="/Google/signin/" />
+    return <Navigate to="/signin/" />
   }
 
   return (
@@ -45,23 +45,22 @@ export default function App() {
     <UserContextProvider>
       <Router basename="/Google/">
         <Routes>
-          <Route path="/" element={() => (<Navigate to='/Google/' />)} />
-          <Route path="/Google/" element={<Search />}/>
-          <Route path="/Google/*" element={<PageNotFound />} />
+          <Route exact path="/" element={<Search />}/>
+          <Route path="*" element={<PageNotFound />} />
           <Route element={<UserRoute />}>
-            <Route path="/Google/signin/" element={<SignIn />} />
-            <Route path="/Google/signup/" element={<SignUp />} />
+            <Route path="/signin/" element={<SignIn />} />
+            <Route path="/signup/" element={<SignUp />} />
           </Route>
           <Route element={<NoUserRoute />}>
-            <Route path="/Google/myaccount/" element={<Account />} />
-            <Route path="/Google/myaccount/personalinfo/" element={<PersonalInfo />} />
-            <Route path="/Google/myaccount/data-and-personalization/" element={<DataPrivacy />} />
-            <Route path="/Google/myaccount/deleteaccount/" element={<DeleteAccount />} />
-            <Route path="/Google/myaccount/name/" element={<Name />} />
-            <Route path="/Google/myaccount/birthday/" element={<Birthday />} />
-            <Route path="/Google/myaccount/gender/" element={<Gender />} />
-            <Route path="/Google/myaccount/email/" element={<Email />} />
-            <Route path="/Google/myaccount/password/" element={<Password />} />
+            <Route path="/myaccount/" element={<Account />} />
+            <Route path="/myaccount/personalinfo/" element={<PersonalInfo />} />
+            <Route path="/myaccount/data-and-personalization/" element={<DataPrivacy />} />
+            <Route path="/myaccount/deleteaccount/" element={<DeleteAccount />} />
+            <Route path="/myaccount/name/" element={<Name />} />
+            <Route path="/myaccount/birthday/" element={<Birthday />} />
+            <Route path="/myaccount/gender/" element={<Gender />} />
+            <Route path="/myaccount/email/" element={<Email />} />
+            <Route path="/myaccount/password/" element={<Password />} />
           </Route>
         </Routes>
       </Router>

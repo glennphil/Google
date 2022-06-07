@@ -98,7 +98,7 @@ const BasicInfo = ({ firstName, lastName, month, day, year, gender }) => (
       </a>
     </div>
     <button className="info-button">
-      <Link to="/Google/myaccount/name/" className="no-deco">
+      <Link to="/myaccount/name/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap">
           <div className="info-title">
@@ -112,7 +112,7 @@ const BasicInfo = ({ firstName, lastName, month, day, year, gender }) => (
       </Link>
     </button>
     <button className="info-button">
-      <Link to="/Google/myaccount/birthday/" className="no-deco">
+      <Link to="/myaccount/birthday/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap">
           <div className="info-title">
@@ -126,7 +126,7 @@ const BasicInfo = ({ firstName, lastName, month, day, year, gender }) => (
       </Link>
     </button>
     <button className="info-button">
-      <Link to="/Google/myaccount/gender/" className="no-deco">
+      <Link to="/myaccount/gender/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap info-wrap-bottom">
           <div className="info-title">
@@ -149,7 +149,7 @@ const ContactInfo = ({ email }) => (
     </div>
     <div className="h3-note" />
     <button className="info-button">
-      <Link to="/Google/myaccount/email/" className="no-deco">
+      <Link to="/myaccount/email/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap info-wrap-bottom">
           <div className="info-title">
@@ -190,7 +190,7 @@ const PasswordInfo = ({ password }) => (
         {t("my-account.personal-info.password_note")}
       </div>
       <button className="info-button">
-      <Link to="/Google/myaccount/password/" className="no-deco">
+      <Link to="/myaccount/password/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap info-wrap-bottom">
           <div className="info-title">

@@ -25,7 +25,7 @@ export default function AccountSideBar() {
 
 const Home = () => (
   <NavLink
-    end to="/Google/myaccount/" 
+    end to="/myaccount/" 
     className={({isActive}) => 
       (isActive ? "sidebar-item-active no-deco" : "sidebar-item no-deco")
     }
@@ -39,7 +39,7 @@ const Home = () => (
 
 const PersonalInfo = () => (
   <NavLink
-    end to="/Google/myaccount/personalinfo/" 
+    end to="/myaccount/personalinfo/" 
     className={({isActive}) => 
       (isActive ? "sidebar-item-active no-deco" : "sidebar-item no-deco")
     }
@@ -53,7 +53,7 @@ const PersonalInfo = () => (
 
 const DataPrivacy = () => (
   <NavLink
-    end to="/Google/myaccount/data-and-personalization/"
+    end to="/myaccount/data-and-personalization/"
     className={({isActive}) => 
       (isActive ? "sidebar-item-active no-deco" : "sidebar-item no-deco")
     }

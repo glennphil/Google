@@ -18,7 +18,7 @@ export default function HeaderIcons() {
 
 const SignIn = () => (
   <li>
-    <Link to="/Google/signin/">
+    <Link to="/signin/">
       <button className="sign-in" target="_top">
         {t('sign-in.sign_in')}
       </button>

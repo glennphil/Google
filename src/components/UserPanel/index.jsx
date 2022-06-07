@@ -29,7 +29,7 @@ export default function UserPanel() {
         </div>
       </div>
       <button className="manage-account-button">
-        <Link to="/Google/myaccount/">
+        <Link to="/myaccount/">
           {t("user-panel.manage_account")}
         </Link>
       </button>
