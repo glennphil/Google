@@ -40,16 +40,24 @@ export default function DataPrivacy() {
 
 const Heading = () => (
   <>
-    <div className="account-page-head align-center">{t("my-account.data-privacy.data_and_privacy")}</div>
-    <div className="account-page-subhead data-subheading">{t("my-account.data-privacy.subheading")}</div>
+    <div className="account-page-head align-center">
+      {t("my-account.data-privacy.data_and_privacy")}
+    </div>
+    <div className="account-page-subhead data-subheading">
+      {t("my-account.data-privacy.subheading")}
+    </div>
   </>
 )
 
 const Card = () => (
   <div className="personal-card-1">
     <div>
-      <div className="account-page-head">{t("my-account.data-privacy.options")}</div>
-      <div className="account-page-subhead">{t("my-account.data-privacy.options_subheading")}</div>
+      <div className="account-page-head">
+        {t("my-account.data-privacy.options")}
+      </div>
+      <div className="account-page-subhead">
+        {t("my-account.data-privacy.options_subheading")}
+      </div>
     </div>
     <div className="personal-scene-img-contain">
       <div className="data-scene-img" />

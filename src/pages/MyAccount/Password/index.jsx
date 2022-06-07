@@ -21,7 +21,7 @@ export default function Password() {
   const day = obj[0].day;
   const year = obj[0].year;
   const password = obj[0].password;
-  const URL = "http://localhost:5000/users/" + id;
+  const URL = "https://my-json-server.typicode.com/paq000/google/users/" + id;
 
   const [value, setValue] = useState({
     firstName: firstName,
@@ -81,7 +81,7 @@ export default function Password() {
       }
       localStorage.setItem("user", JSON.stringify(userObject));
       setTimeout(function () {
-        window.location.href = "http://localhost:3000/myaccount/personalinfo/";
+        window.location.href = "http://paq000.github.io/Google/myaccount/personalinfo/";
       }, 250);
     } catch(error) {
       console.log(error.response.data)

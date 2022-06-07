@@ -14,7 +14,7 @@ export default function DeleteAccount() {
 
   const obj = JSON.parse(localStorage.getItem('user'));
   const id = obj[0].id;
-  const URL = "http://localhost:5000/users/" + id;
+  const URL = "https://my-json-server.typicode.com/paq000/google/users/" + id;
 
   const {register, handleSubmit } = useForm({
     mode: 'onSubmit',
@@ -35,7 +35,7 @@ export default function DeleteAccount() {
         headers: { "Content-Type": "application/json"},
       });
       setTimeout(function () {
-        window.location.href = "http://localhost:3000/";
+        window.location.href = "http://paq000.github.io/Google/";
       }, 250);
       localStorage.setItem('user', null);
     } catch(error) {
