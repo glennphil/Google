@@ -1,6 +1,6 @@
 export const lightTheme = {
   backgroundcolor: 'hsl(0deg 0% 100%)',
-  logo: 'url("./googlelogo_color.png")',
+  logo: 'url("./Google/googlelogo_color.png")',
   scrollbarcolor: 'hsl(0deg 0% 95%)',
   scrollbarthumb: 'hsl(0deg 0% 76%)',
   gappbackgroundcolor: 'hsl(0deg 0% 100%)',
