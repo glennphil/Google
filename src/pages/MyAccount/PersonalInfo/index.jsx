@@ -61,16 +61,24 @@ export default function PersonalInfo() {
 
 const Heading = () => (
   <>
-    <div className="account-page-head align-center">{t("my-account.personal-info.personal_info")}</div>
-    <div className="account-page-subhead align-center">{t("my-account.personal-info.subheading")}</div>
+    <div className="account-page-head align-center">
+      {t("my-account.personal-info.personal_info")}
+    </div>
+    <div className="account-page-subhead align-center">
+      {t("my-account.personal-info.subheading")}
+    </div>
   </>
 )
 
 const Card = () => (
   <div className="personal-card-1">
     <div>
-      <div className="account-page-head">{t("my-account.personal-info.profile_info_head")}</div>
-      <div className="account-page-subhead">{t("my-account.personal-info.profile_info_subheading")}</div>
+      <div className="account-page-head">
+        {t("my-account.personal-info.profile_info_head")}
+      </div>
+      <div className="account-page-subhead">
+        {t("my-account.personal-info.profile_info_subheading")}
+      </div>
     </div>
     <div className="personal-scene-img-contain">
       <div className="personal-scene-img" />
@@ -80,14 +88,17 @@ const Card = () => (
 
 const BasicInfo = ({ firstName, lastName, month, day, year, gender }) => (
   <div className="info-card">
-    <div className="h3">{t("my-account.personal-info.basic_info")}</div>
-    <div className="h3-note">{t("my-account.personal-info.basic_info_note")}&nbsp;
+    <div className="h3">
+      {t("my-account.personal-info.basic_info")}
+    </div>
+    <div className="h3-note">
+      {t("my-account.personal-info.basic_info_note")}&nbsp;
       <a href="https://support.google.com/accounts/answer/6304920" target="_blank" rel="noreferrer" className="learn-more no-deco">
         {t("more_information")}
       </a>
     </div>
     <button className="info-button">
-      <Link to="/myaccount/name/" className="no-deco">
+      <Link to="/Google/myaccount/name/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap">
           <div className="info-title">
@@ -101,7 +112,7 @@ const BasicInfo = ({ firstName, lastName, month, day, year, gender }) => (
       </Link>
     </button>
     <button className="info-button">
-      <Link to="/myaccount/birthday/" className="no-deco">
+      <Link to="/Google/myaccount/birthday/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap">
           <div className="info-title">
@@ -115,7 +126,7 @@ const BasicInfo = ({ firstName, lastName, month, day, year, gender }) => (
       </Link>
     </button>
     <button className="info-button">
-      <Link to="/myaccount/gender/" className="no-deco">
+      <Link to="/Google/myaccount/gender/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap info-wrap-bottom">
           <div className="info-title">
@@ -133,10 +144,12 @@ const BasicInfo = ({ firstName, lastName, month, day, year, gender }) => (
 
 const ContactInfo = ({ email }) => (
   <div className="info-card">
-    <div className="h3">{t("my-account.personal-info.contact_info")}</div>
+    <div className="h3">
+      {t("my-account.personal-info.contact_info")}
+    </div>
     <div className="h3-note" />
     <button className="info-button">
-      <Link to="/myaccount/email/" className="no-deco">
+      <Link to="/Google/myaccount/email/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap info-wrap-bottom">
           <div className="info-title">
@@ -155,8 +168,12 @@ const ContactInfo = ({ email }) => (
 const Card2 = () => (
   <div className="personal-card-1">
   <div>
-    <div className="account-page-head">{t("my-account.personal-info.other_info_head")}</div>
-    <div className="account-page-subhead">{t("my-account.personal-info.other_info_subheading")}</div>
+    <div className="account-page-head">
+      {t("my-account.personal-info.other_info_head")}
+    </div>
+    <div className="account-page-subhead">
+      {t("my-account.personal-info.other_info_subheading")}
+    </div>
   </div>
   <div className="personal-scene-img-contain">
     <div className="personal-scene-pref-img" />
@@ -166,10 +183,14 @@ const Card2 = () => (
 
 const PasswordInfo = ({ password }) => (
   <div className="info-card account-bottom-marg">
-    <div className="h3">{t("my-account.personal-info.personal-password.password")}</div>
-      <div className="h3-note">{t("my-account.personal-info.password_note")}</div>
+    <div className="h3">
+      {t("my-account.personal-info.personal-password.password")}
+    </div>
+      <div className="h3-note">
+        {t("my-account.personal-info.password_note")}
+      </div>
       <button className="info-button">
-      <Link to="/myaccount/password/" className="no-deco">
+      <Link to="/Google/myaccount/password/" className="no-deco">
         <div className="info-wrap-divide" />
         <div className="info-wrap info-wrap-bottom">
           <div className="info-title">

@@ -26,7 +26,7 @@ export default function AccountHeader() {
 
   return (
     <header className={ scroll ? "header-flex sticky" : "header-flex" }>
-      <Link to="/myaccount/" className="no-deco">
+      <Link to="/Google/myaccount/" className="no-deco">
         <div className="no-select">
           <AccountLogo />
         </div>

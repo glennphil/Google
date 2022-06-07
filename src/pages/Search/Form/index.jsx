@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 
 import './style.css';
 
-export default function NewForm() {
+export default function Form() {
   const [value, setValue] = useState({
     searchInput: ''
   });
@@ -28,9 +28,9 @@ export default function NewForm() {
       <div className="search-container">
         <div className="search-bar">
           <SearchIcon className="search-icon" />
-          <Form
+          <Input
             value={value}
-            setValue={setValue}
+            setvalue={setValue}
             register={register}
           />
           <ClearButton />
@@ -45,7 +45,7 @@ export default function NewForm() {
   )
 }
 
-const Form = ({ register, value }) => (
+const Input = ({ register, value }) => (
   <input
     {...register("password", {
       required: true,
@@ -64,7 +64,7 @@ const Form = ({ register, value }) => (
     autoComplete="off"
     spellCheck="false"
     aria-label="Search"
-    setValue={value.searchInput}
+    setvalue={value.searchInput}
   />
 )
 

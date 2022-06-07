@@ -46,7 +46,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={() => (<Navigate to='/Google/' />)} />
-          <Route exact path="/Google/" element={<Search />}/>
+          <Route path="/Google/" element={<Search />}/>
           <Route path="/Google/*" element={<PageNotFound />} />
           <Route element={<UserRoute />}>
             <Route path="/Google/signin/" element={<SignIn />} />

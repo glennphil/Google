@@ -29,7 +29,7 @@ export default function UserPanel() {
         </div>
       </div>
       <button className="manage-account-button">
-        <Link to="/myaccount/">
+        <Link to="/Google/myaccount/">
           {t("user-panel.manage_account")}
         </Link>
       </button>
@@ -47,13 +47,17 @@ export default function UserPanel() {
 
 const Privacy = () => (
   <button className="user-panel-link">
-    <a rel="noreferrer" target="_blank" href="https://policies.google.com/privacy?hl=en">{t("user-panel.privacy")}</a>
+    <a rel="noreferrer" target="_blank" href="https://policies.google.com/privacy?hl=en">
+      {t("user-panel.privacy")}
+    </a>
   </button>
 )
 
 const Terms = () => (
   <button className="user-panel-link">
-    <a rel="noreferrer" target="_blank" href="https://policies.google.com/terms?hl=en">{t("user-panel.terms")}</a>
+    <a rel="noreferrer" target="_blank" href="https://policies.google.com/terms?hl=en">
+      {t("user-panel.terms")}
+    </a>
   </button>
 )
 

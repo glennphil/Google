@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useState, useContext } from 'react';
 import { UserContext } from "../../../usercontext";
 import { Helmet } from "react-helmet";
-import { BackArrow } from "../Home";
+import { ArrowLeftIcon } from "@heroicons/react/solid";
 
 export default function DeleteAccount() {
   const [agree, setAgree] = useState(false);
@@ -77,8 +77,14 @@ const SubHeading = () => (
   <div className="nav-contain-blue nav-contain-no-bord">
     <div className="navbar-form-wrap">
       <div className="account-subhead">
-        <BackArrow />
-        <div className="account-subhead-text">{t("my-account.data-privacy.data-delete.delete_account")}</div>
+        <Link to="/Google/myaccount/data-and-personalization/">
+          <div className="back-arrow">
+            <ArrowLeftIcon className="back-arrow-icon"/>
+          </div>
+        </Link>
+        <div className="account-subhead-text">
+          {t("my-account.data-privacy.data-delete.delete_account")}
+        </div>
       </div>
     </div>
   </div>
@@ -112,10 +118,12 @@ const DeleteInput = ({ register, setAgree }) => (
 const Buttons = ({ agree }) => (
   <div className="form-button-row">
     <button className="cancel">
-      <Link to="/myaccount/data-and-personalization/" className="cancel-link no-deco">
+      <Link to="/Google/myaccount/data-and-personalization/" className="cancel-link no-deco">
         {t("cancel")}
       </Link>
     </button>
-    <button type="submit" className="next uppercase" disabled={!agree}>{t("my-account.data-privacy.data-delete.delete_account")}</button>
+    <button type="submit" className="next uppercase" disabled={!agree}>
+      {t("my-account.data-privacy.data-delete.delete_account")}
+    </button>
   </div>
 )

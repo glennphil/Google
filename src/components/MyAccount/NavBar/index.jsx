@@ -18,7 +18,7 @@ export default function AccountNavBar() {
 const Home = () => (
   <div className="navbar-link-padding">
     <NavLink
-      end to="/myaccount/" 
+      end to="/Google/myaccount/" 
       className={({isActive}) => 
         (isActive ? "navbar-active no-deco" : "no-deco")
       }
@@ -33,7 +33,7 @@ const Home = () => (
 const PersonalInfo = () => (
   <div className="navbar-link-padding">
     <NavLink
-      end to="/myaccount/personalinfo/" 
+      end to="/Google/myaccount/personalinfo/" 
       className={({isActive}) => 
         (isActive ? "navbar-active no-deco" : "no-deco")
       }
@@ -48,7 +48,7 @@ const PersonalInfo = () => (
 const DataPrivacy = () => (
   <div className="navbar-link-padding">
     <NavLink
-      end to="/myaccount/data-and-personalization/"
+      end to="/Google/myaccount/data-and-personalization/"
       className={({isActive}) => 
         (isActive ? "navbar-active no-deco" : "no-deco")
       }
