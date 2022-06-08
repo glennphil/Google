@@ -37,4 +37,9 @@ export const darkTheme = {
   tooltipbackground: 'hsl(0, 0%, 18%)',
   tooltiptextcolor: 'hsl(0, 0%, 100%)',
   tooltipborder: 'hsl(0, 0%, 100%)',
+  userpanelbuttonborder: 'hsl(213, 5%, 39%)',
+  userpaneltext: 'hsl(216, 12%, 92%)',
+  userpanelemail: 'hsl(216, 12%, 92%)',
+  userpanelbuttonhover: 'rgba(232, 234, 237, .04)',
+  userpanelbuttonactive: 'rgba(232, 234, 237, .1)',
   }

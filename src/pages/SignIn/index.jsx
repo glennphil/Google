@@ -2,6 +2,7 @@ import SignInEmail from './Email';
 import SignInPassword from './Password';
 import SignPageFooter from '../../components/SignPage/Footer';
 import SignPageHeader from '../../components/SignPage/Header';
+import axios from 'axios';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
@@ -23,10 +24,19 @@ export default function SignIn() {
   const [value, setValue] = useState({
     email: '',
     password: '',
+    firstName: '',
   })
 
   const onSubmit = async () => {
     setSuccess(true);
+  }
+
+  const response = async () => await axios.get("https://google-frontend.herokuapp.com/users?email=" + value.email);
+  let nameCheck = JSON.stringify(response[0]);
+
+  if (success === true) {
+    value.firstName = nameCheck;
+    console.log(nameCheck);
   }
 
   return (
@@ -46,7 +56,6 @@ export default function SignIn() {
                 register={register}
                 errors={errors}
                 watch={watch}
-                Next={Next}
                 Logo={Logo}
               /> 
               : 
@@ -55,7 +64,6 @@ export default function SignIn() {
                 value={value}
                 setValue={setValue}
                 register={register}
-                Next={Next}
                 Logo={Logo}
                 onSubmit={onSubmit}
               />
@@ -79,10 +87,4 @@ export const Logo = () => (
       <path fill="#ea4335" d="M67.954 16.303c-1.33 0-2.278-.608-2.886-1.804l7.967-3.3-.27-.68c-.495-1.33-2.008-3.79-5.102-3.79-3.068 0-5.622 2.41-5.622 5.96 0 3.34 2.53 5.96 5.92 5.96 2.73 0 4.31-1.67 4.97-2.64l-2.03-1.35c-.673.98-1.6 1.64-2.93 1.64zm-.203-7.27c1.04 0 1.92.52 2.21 1.264l-5.32 2.21c-.06-2.3 1.79-3.474 3.12-3.474z"></path>
     </svg>
   </center>
-);
-
-export const Next = () => (
-  <button type="submit" className="next">
-      {t('next')}
-  </button>
 );

@@ -40,5 +40,10 @@ export const GlobalStyles = createGlobalStyle`
     --tooltip-background-color: ${({ theme }) => theme.tooltipbackground};
     --tooltip-text-color: ${({ theme }) => theme.tooltiptextcolor};
     --tooltip-border-color: ${({ theme }) => theme.tooltipborder};
+    --userpanel-button-border-color: ${({ theme }) => theme.userpanelbuttonborder};
+    --userpanel-text-color: ${({ theme }) => theme.userpaneltext};
+    --userpanel-email-text-color: ${({ theme }) => theme.userpanelemail};
+    --userpanel-button-hover: ${({ theme }) => theme.userpanelbuttonhover};
+    --userpanel-button-active: ${({ theme }) => theme.userpanelbuttonactive};
   }
 `;

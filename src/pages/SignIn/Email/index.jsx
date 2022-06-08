@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import './style.css';
 
-export default function SignInEmail({ Logo, value, setValue, register, handleSubmit, onSubmit, Next }) {
+export default function SignInEmail({ Logo, value, setValue, register, handleSubmit, onSubmit }) {
   const [user, setUser] = useState();
 
   const handleChange = (e) => {
@@ -34,7 +34,8 @@ export default function SignInEmail({ Logo, value, setValue, register, handleSub
     <div className="form-container">
       <Logo />
       <Heading />
-      <form onSubmit={handleSubmit(onSubmit)} className="signin-form email-form" noValidate>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <div className="signin-form email-form">
         <input 
           {...register("email", {
             required: true,
@@ -53,12 +54,13 @@ export default function SignInEmail({ Logo, value, setValue, register, handleSub
         <span className="input-placeholder">
           {t('sign-in.email.form_placeholder')}
         </span>
+        </div>
+        <Note />
+        <div className="flex-row">
+          <CreateAccount />
+          <Next />
+        </div>
       </form>
-      <Note />
-      <div className="flex-row">
-        <CreateAccount />
-        <Next />
-      </div>
     </div>
   )
 }
@@ -86,8 +88,14 @@ const Note = () => (
 
 const CreateAccount = () => (
   <Link to="/signup/">
-    <button className="create-account">
+    <button className="create-account" type="button">
       {t('sign-in.email.create_account')}
     </button>
   </Link>
+);
+
+const Next = () => (
+  <button type="submit" className="next">
+    {t('next')}
+  </button>
 );

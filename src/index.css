@@ -51,7 +51,7 @@ body {
   flex-flow: column;
   padding: 0;
   margin: 0;
-  background-color: var(--background-color);
+  background-color: #fff;
   font-family: Arial, san-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -62,6 +62,10 @@ main {
   display: flex;
   flex-flow: column;
   height: 100vh;
+}
+
+.dark-bg {
+  background-color: var(--background-color);
 }
 
 .uppercase {

@@ -6,7 +6,7 @@ import Form from './Form/index';
 
 export default function Search() {
   return (
-    <main>
+    <main className="dark-bg">
       <Header />
       <Logo />
       <Form />

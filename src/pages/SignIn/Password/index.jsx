@@ -11,7 +11,7 @@ import './../../../components/SignPage/Heading/style.css';
 import './../../../components/SignPage/SignInForm/style.css';
 import './../../../components/SignPage/ShowPassword/style.css';
 
-export default function SignInPassword({ Logo, value, setValue, register, handleSubmit, errors, Next }) {
+export default function SignInPassword({ Logo, value, setValue, register, handleSubmit, errors }) {
   const { setUser } = useContext(UserContext);
 
   const currentUser = async () => {
@@ -23,7 +23,6 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
   async function matchPassword() {
     const response = await axios.get("https://google-frontend.herokuapp.com/users?email=" + value.email);
     const userInput = (value.password);
-
     if (response.data[0].password === userInput) {
       console.log("password matches");
       return true;
@@ -50,20 +49,37 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
   return (
     <div className="form-container">
       <Logo />
-      <Heading value={value} />
-      <Form
-        matchPassword={matchPassword}
-        handleSubmit={handleSubmit} 
+      <Heading 
         value={value} 
-        onSubmit={onSubmit} 
-        handleChange={handleChange} 
-        register={register} 
       />
-      <ShowPassword />
-      <div className="flex-row">
-        <div />
-        <Next />
-      </div>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <div className="signin-form pass-form">
+          <input 
+            {...register("password", {
+              required: true,
+              minLength: 8,
+              validate: {
+                checkPassword: async () => await matchPassword(),
+              }
+            })}
+            autoComplete="off"
+            name="password"
+            id="password"
+            type="password"
+            value={value.password}
+            onChange={handleChange}
+            className="input-email"
+          />
+          <span className="input-placeholder">
+            {t("sign-in.password.form_placeholder")}
+          </span>
+        </div>
+        <ShowPassword />
+        <div className="flex-row">
+          <div />
+          <Next />
+        </div>
+      </form>
     </div>
   )
 }
@@ -71,7 +87,7 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
 const Heading = ({ value }) => (
   <center>
     <h1 className="heading">
-      {t("sign-in.password.heading")}&nbsp; firstName
+      {t("sign-in.password.heading")}&nbsp;{value.firstName}
     </h1>
     <div className="email-name">
       {value.email}
@@ -79,26 +95,8 @@ const Heading = ({ value }) => (
   </center>
 );
 
-const Form = ({ handleSubmit, onSubmit, handleChange, value, register, matchPassword }) => (
-  <form onSubmit={handleSubmit(onSubmit)} className="signin-form pass-form" noValidate>
-    <input 
-      {...register("password", {
-        required: true,
-        minLength: 8,
-        validate: {
-          checkPassword: async () => await matchPassword(),
-        }
-      })}
-      autoComplete="off"
-      name="password"
-      id="password"
-      type="password"
-      value={value.password}
-      onChange={handleChange}
-      className="input-email"
-    />
-    <span className="input-placeholder">
-      {t("sign-in.password.form_placeholder")}
-    </span>
-  </form>
+const Next = () => (
+  <button type="submit" className="next">
+    {t('next')}
+  </button>
 );

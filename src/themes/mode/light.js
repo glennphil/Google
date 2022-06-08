@@ -30,4 +30,9 @@ export const lightTheme = {
   gapptitlebackground: 'hsl(220deg 5% 32%)',
   gappapphover: 'hsl(218deg 92% 95%)',
   gappshadow: 'hsl(206deg 5% 25% / 35%)',
+  userpanelbuttonborder: 'hsl(220, 9%, 87%)',
+  userpaneltext: 'hsl(206, 6%, 25%)',
+  userpanelemail: 'hsl(213, 5%, 39%)',
+  userpanelbuttonhover: 'hsl(180, 7%, 97%)',
+  userpanelbuttonactive: 'rgba(95, 99, 104, .1)'
 }

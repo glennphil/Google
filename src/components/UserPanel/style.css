@@ -130,22 +130,22 @@
   font-size: 16px;
   letter-spacing: 0.1px;
   line-height: 24px;
-  color: rgb(32, 33, 36);
+  color: var(--userpanel-text-color);
   font-weight: 500;
 }
 
 .user-info-email {
   font-size: 14px;
   letter-spacing: 0.2px;
-  color: rgb(95, 99, 104);
+  color: var(--userpanel-email-text-color);
   line-height: 20px;
 }
 
 .manage-account-button {
   margin-bottom: 20px;
   padding: 6px 16px;
-  border: 1px solid rgb(218, 220, 224);
-  color: rgb(60, 64, 67);
+  border: 1px solid var(--userpanel-button-border-color);
+  color: var(--userpanel-text-color);
   font-size: 14px;
   display: inline-block;
   align-self: center;
@@ -161,21 +161,21 @@
 
 .manage-account-button:hover,
 .signout-button:hover {
-  background-color: #f7f8f8;
+  background-color: var(--userpanel-button-hover);
 }
 
 .manage-account-button:active,
 .signout-button:active {
-  background-color: rgba(95,99,104,.1);
+  background-color: var(--userpanel-button-active);
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
 
 .signout-button {
   margin: 16px 0;
   padding: 8px 24px;
-  border: 1px solid rgb(218, 220, 224);
+  border: 1px solid var(--userpanel-button-border-color);
   border-radius: 4px;
-  color: rgb(60, 64, 67);
+  color: var(--userpanel-text-color);
   font-size: 14px;
   font-family: 'Noto Sans', sans-serif;
   align-self: center;
@@ -197,7 +197,7 @@
   padding: 4px 7px;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: rgb(60, 64, 67);
+  color: var(--userpanel-text-color);
   font-size: 12px;
   letter-spacing: 0.3px;
   line-height: 16px;
@@ -205,23 +205,23 @@
 }
 
 .user-panel-link:hover {
-  background-color: #f7f8f8;
+  background-color: var(--userpanel-button-hover);
   text-decoration: none;
 }
 
 .user-panel-link:active {
-  background-color: rgba(95,99,104,.1);
+  background-color: var(--userpanel-button-active);
   text-decoration: none;
 }
 
 .user-panel-link-dot {
-  color: #3c4043;
+  color: var(--userpanel-text-color);
 }
 
 .user-links {
   flex-direction: row;
   margin: 0 -33px 0 -33px;
-  border-top: 1px solid rgb(218, 220, 224);
+  border-top: 1px solid var(--userpanel-button-border-color);
 }
 
 .user-panel a:hover {

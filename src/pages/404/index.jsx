@@ -10,6 +10,7 @@ export default function PageNotFound() {
       <Helmet>
         <title>{t('not-found.title')}</title>
       </Helmet>
+      <main className="dark-bg">
       <section className="notfound-container">
         <div className="left-container">
           <Logo />
@@ -18,6 +19,7 @@ export default function PageNotFound() {
         </div>
         <Robot />
       </section>
+      </main>
     </>
   )
 }

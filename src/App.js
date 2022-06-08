@@ -41,30 +41,30 @@ export default function App() {
       <title>Google</title>
     </Helmet>
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-    <GlobalStyles />
-    <UserContextProvider>
-      <Router basename="/Google/">
-        <Routes>
-          <Route path="/" element={<Search />}/>
-          <Route path="*" element={<PageNotFound />} />
-          <Route element={<UserRoute />}>
-            <Route path="/signin/" element={<SignIn />} />
-            <Route path="/signup/" element={<SignUp />} />
-          </Route>
-          <Route element={<NoUserRoute />}>
-            <Route path="/myaccount/" element={<Account />} />
-            <Route path="/myaccount/personalinfo/" element={<PersonalInfo />} />
-            <Route path="/myaccount/data-and-personalization/" element={<DataPrivacy />} />
-            <Route path="/myaccount/deleteaccount/" element={<DeleteAccount />} />
-            <Route path="/myaccount/name/" element={<Name />} />
-            <Route path="/myaccount/birthday/" element={<Birthday />} />
-            <Route path="/myaccount/gender/" element={<Gender />} />
-            <Route path="/myaccount/email/" element={<Email />} />
-            <Route path="/myaccount/password/" element={<Password />} />
-          </Route>
-        </Routes>
-      </Router>
-    </UserContextProvider>
+      <GlobalStyles />
+      <UserContextProvider>
+        <Router basename="/Google/">
+          <Routes>
+            <Route path="/" element={<Search />}/>
+            <Route path="*" element={<PageNotFound />} />
+            <Route element={<UserRoute />}>
+              <Route path="/signin/" element={<SignIn />} />
+              <Route path="/signup/" element={<SignUp />} />
+            </Route>
+            <Route element={<NoUserRoute />}>
+              <Route path="/myaccount/" element={<Account />} />
+              <Route path="/myaccount/personalinfo/" element={<PersonalInfo />} />
+              <Route path="/myaccount/data-and-personalization/" element={<DataPrivacy />} />
+              <Route path="/myaccount/deleteaccount/" element={<DeleteAccount />} />
+              <Route path="/myaccount/name/" element={<Name />} />
+              <Route path="/myaccount/birthday/" element={<Birthday />} />
+              <Route path="/myaccount/gender/" element={<Gender />} />
+              <Route path="/myaccount/email/" element={<Email />} />
+              <Route path="/myaccount/password/" element={<Password />} />
+            </Route>
+          </Routes>
+        </Router>
+      </UserContextProvider>
     </ThemeProvider>
     </>
   )
