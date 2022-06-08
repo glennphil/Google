@@ -16,6 +16,8 @@ import { darkTheme, lightTheme, GlobalStyles, ThemeProvider, useTheme } from './
 import { BrowserRouter as Router, Route, Routes, Navigate, Outlet } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
+import Test from './pages/Test';
+
 export default function App() {
   const [theme] = useTheme();
 
@@ -45,6 +47,8 @@ export default function App() {
     <UserContextProvider>
       <Router basename="/Google/">
         <Routes>
+        <Route path="/test/" element={<Test />} />
+
           <Route exact path="/" element={<Search />}/>
           <Route path="*" element={<PageNotFound />} />
           <Route element={<UserRoute />}>

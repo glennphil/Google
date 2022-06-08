@@ -15,13 +15,13 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
   const { setUser } = useContext(UserContext);
 
   const currentUser = async () => {
-    let URL = "https://my-json-server.typicode.com/paq000/google/users?email=" + value.email;
+    let URL = "https://google-frontend.herokuapp.com/users?email=" + value.email;
     let response = await axios.get(URL);
     return response.data;
   };
 
   async function matchPassword() {
-    const response = await axios.get("https://my-json-server.typicode.com/paq000/google/users?email=" + value.email);
+    const response = await axios.get("https://google-frontend.herokuapp.com/users?email=" + value.email);
     const userInput = (value.password);
 
     if (response.data[0].password === userInput) {

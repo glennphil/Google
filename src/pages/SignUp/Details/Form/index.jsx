@@ -8,7 +8,7 @@ export default function Form({ value, setValue, register, handleSubmit, errors, 
   const { setUser } = useContext(UserContext);
 
   const currentUser = async () => {
-    let URL = "https://my-json-server.typicode.com/paq000/google/usersemail=" + value.email;
+    let URL = "https://google-frontend.herokuapp.com/users?email=" + value.email;
     let response = await axios.get(URL);
     return response.data;
   };
@@ -17,7 +17,7 @@ export default function Form({ value, setValue, register, handleSubmit, errors, 
     try {
       await axios({
         method: "post",
-        url: "https://my-json-server.typicode.com/paq000/google/users/",
+        url: "https://google-frontend.herokuapp.com/users",
         data: {
           firstName: value.firstName,
           lastName: value.lastName,
