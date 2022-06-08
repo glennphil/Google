@@ -8,7 +8,7 @@ export default function PageNotFound() {
   return (
     <>
       <Helmet>
-        <title>{t('not-found.not_found_title')}</title>
+        <title>{t('not-found.title')}</title>
       </Helmet>
       <section className="notfound-container">
         <div className="left-container">

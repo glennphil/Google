@@ -118,11 +118,11 @@
 }
 
 .personalize-img {
-  background-image: url("../../../../public/personalize.png");
+  background-image: url("../../../../public/assets/personalize.png");
 }
 
 .personalinfo-img {
-  background-image: url("../../../../public/personalinfo.png");
+  background-image: url("../../../../public/assets/personalinfo.png");
 }
 
 .flex-link {

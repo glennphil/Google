@@ -180,6 +180,16 @@
   transition: 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
+.account-logo {
+  display: inline-flex;
+  width: 244px;
+  height: 244px;
+  background-image: var(--account-logo);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 244px 244px;
+}
+
 @media (max-width: 600px) {
   .name-row {
     grid-template-columns: 214px 214px;

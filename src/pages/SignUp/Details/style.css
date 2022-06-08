@@ -75,3 +75,13 @@ select.focus-red ~ .signup-input-placeholder-detail {
   color: red;
   transition: 0.05s;
 }
+
+.personal-logo {
+  display: inline-flex;
+  width: 244px;
+  height: 244px;
+  background-image: var(--personal-logo);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 244px 244px;
+}

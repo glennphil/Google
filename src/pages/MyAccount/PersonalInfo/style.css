@@ -37,7 +37,7 @@
 }
 
 .personal-scene-img {
-  background-image: url("../../../../public/profile_scene.png");
+  background-image: url("../../../../public/assets/scene_info.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 360px 128px;
@@ -46,7 +46,7 @@
 }
 
 .personal-scene-pref-img {
-  background-image: url("../../../../public/profile_scene_pref.png");
+  background-image: url("../../../../public/assets/scene_password.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 360px 128px;

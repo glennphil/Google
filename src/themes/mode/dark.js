@@ -1,8 +1,8 @@
 export const darkTheme = {
   backgroundcolor: 'hsl(225, 6%, 13%)',
-  logo: 'url("./googlelogo_white.png")',
-  notfoundlogo: 'url("./google_notfound_logo.png")',
-  robot: 'url("./robot_dark.png")',
+  logo: 'url("../Google/assets/white_logo.png")',
+  notfoundlogo: 'url("../Google/assets/sm_white_logo.png")',
+  robot: 'url("../Google/assets/dark_robot.png")',
   scrollbarcolor: 'hsl(0, 0%, 26%)',
   scrollbarthumb: 'hsl(0, 0%, 41%)',
   scrollbarthumbhover: 'hsl(0, 0%, 48%)',

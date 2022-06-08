@@ -62,7 +62,7 @@ export const Back = () => (
 const AccountLogo = () => (
   <section className="account-app-icon">
     <figure className="account-app-figure">
-      <img src="https://ssl.gstatic.com/accounts/signup/glif/personal.svg" alt="" width="244" height="244" />
+      <picture src="" alt="logo" className="personal-logo" />
       <figcaption className="fig-heading">
         {t("sign-up.detail.figure_caption")}
       </figcaption>

@@ -5,10 +5,11 @@
 :root {
   --background-color: hsl(0deg 0% 100%);
   --footer-background-color: hsl(0deg 0% 95%);
-  --logo: url("../public/googlelogo_color.png");
-  --google-apps: url("../public/googleapps.png");
-  --notfound-logo: url("../public/googlelogo_color_150x54dp.png");
-  --robot: url("../public/robot.png");
+  --google-apps: url("../public/assets/apps.png");
+  --account-logo: url("../public/assets/account.svg");
+  --personal-logo: url("../public/assets/personal.svg");
+  --notfound-logo: url("../public/assets/sm_color_logo.png");
+  --robot: url("../public/assets/light_robot.png");
   --scrollbar-color: hsl(0deg 0% 95%);
   --scrollbar-thumb: hsl(0deg 0% 76%);
   --scrollbar-thumb-hover: hsl(0deg 0% 66%);
