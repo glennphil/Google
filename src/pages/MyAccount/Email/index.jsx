@@ -23,7 +23,7 @@ export default function Email() {
   const day = obj[0].day;
   const year = obj[0].year;
   const password = obj[0].password;
-  const URL = "http://localhost:5000/users/" + id;
+  const URL = "https://google-frontend.herokuapp.com/users/" + id;
 
   const [value, setValue] = useState({
     firstName: firstName,

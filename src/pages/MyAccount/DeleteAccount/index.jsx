@@ -14,7 +14,7 @@ export default function DeleteAccount() {
 
   const obj = JSON.parse(localStorage.getItem('user'));
   const id = obj[0].id;
-  const URL = "https://my-json-server.typicode.com/paq000/google/users/" + id;
+  const URL = "https://google-frontend.herokuapp.com/users/" + id;
 
   const {register, handleSubmit } = useForm({
     mode: 'onSubmit',
