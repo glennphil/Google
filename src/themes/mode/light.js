@@ -1,6 +1,8 @@
 export const lightTheme = {
   backgroundcolor: 'hsl(0deg 0% 100%)',
-  logo: 'url("assets/color_logo.png")',
+  logo: 'url("https://paq000.github.io/Google/assets/color_logo.png")',
+  notfoundlogo: 'url("https://paq000.github.io/Google/assets/sm_color_logo.png")',
+  robot: 'url("https://paq000.github.io/Google/assets/light_robot.png")',
   scrollbarcolor: 'hsl(0deg 0% 95%)',
   scrollbarthumb: 'hsl(0deg 0% 76%)',
   gappbackgroundcolor: 'hsl(0deg 0% 100%)',
