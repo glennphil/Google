@@ -17,7 +17,7 @@ export default function SignIn() {
     },
     mode: 'onSubmit',
     reValidateMode: 'onChange',
-    delayError: 1000,
+    delayError: 0,
   });
 
   const [value, setValue] = useState({
