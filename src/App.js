@@ -45,7 +45,7 @@ export default function App() {
     <UserContextProvider>
       <Router basename="/Google/">
         <Routes>
-          <Route exact path="/" element={<Search />}/>
+          <Route path="/" element={<Search />}/>
           <Route path="*" element={<PageNotFound />} />
           <Route element={<UserRoute />}>
             <Route path="/signin/" element={<SignIn />} />
