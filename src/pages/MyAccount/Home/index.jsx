@@ -68,7 +68,7 @@ const Welcome = ({ letter, firstName, lastName }) => (
 )
 
 const PrivacyAndPersonalization = () => (
-  <Link exact to="/myaccount/data-and-personalization/" className="no-deco flex-link">
+  <Link to="/myaccount/data-and-personalization/" className="no-deco flex-link">
     <section className="welcome-card">
       <div className="welcome-card-top">
         <div className="inner-card-row">
@@ -91,7 +91,7 @@ const PrivacyAndPersonalization = () => (
 )
 
 const PersonalInfo = () => (
-  <Link exact to="/myaccount/personalinfo/" className="no-deco flex-link account-bottom-marg">
+  <Link to="/myaccount/personalinfo/" className="no-deco flex-link account-bottom-marg">
     <section className="welcome-card">
       <div className="welcome-card-top">
         <div className="inner-card-row">
