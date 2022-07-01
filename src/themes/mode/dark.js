@@ -1,8 +1,8 @@
 export const darkTheme = {
   backgroundcolor: 'hsl(225, 6%, 13%)',
-  logo: 'url("https://paq000.github.io/Google/assets/white_logo.png")',
-  notfoundlogo: 'url("https://paq000.github.io/Google/assets/sm_white_logo.png")',
-  robot: 'url("https://paq000.github.io/Google/assets/dark_robot.png")',
+  logo: 'url("https://glennphil.github.io/Google/assets/white_logo.png")',
+  notfoundlogo: 'url("https://glennphil.github.io/Google/assets/sm_white_logo.png")',
+  robot: 'url("https://glennphil.github.io/Google/assets/dark_robot.png")',
   scrollbarcolor: 'hsl(0, 0%, 26%)',
   scrollbarthumb: 'hsl(0, 0%, 41%)',
   scrollbarthumbhover: 'hsl(0, 0%, 48%)',

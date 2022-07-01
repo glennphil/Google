@@ -52,7 +52,7 @@ export default function App() {
               <Route path="/signup/" element={<SignUp />} />
             </Route>
             <Route element={<NoUserRoute />}>
-              <Route path="/myaccount/" element={<Account />} />
+              <Route path="/myaccount/" element={<Account />}/>
               <Route path="/myaccount/personalinfo/" element={<PersonalInfo />} />
               <Route path="/myaccount/data-and-personalization/" element={<DataPrivacy />} />
               <Route path="/myaccount/deleteaccount/" element={<DeleteAccount />} />

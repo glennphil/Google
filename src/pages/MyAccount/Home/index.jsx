@@ -128,9 +128,9 @@ export const BackArrow = () => (
 )
 
 export const Cancel = () => (
-  <button className="cancel">
-    <Link to="/myaccount/personalinfo/" className="cancel-link no-deco">
+  <Link to="/myaccount/personalinfo/">
+    <button className="cancel">
       {t("cancel")}
-    </Link>
-  </button>
+    </button>
+  </Link>
 )
