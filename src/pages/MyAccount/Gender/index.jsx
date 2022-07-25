@@ -5,24 +5,13 @@ import { useState, useContext } from 'react';
 import { UserContext } from "../../../usercontext";
 import { Helmet } from "react-helmet";
 import { BackArrow, Cancel } from "../Home";
+import { firstName, lastName, email, id, gender, month, day, year, password, URL } from './../index';
 
 import './style.css';
 import { t } from "i18next";
 
 export default function Gender() {
   const { setUser } = useContext(UserContext);
-
-  const obj = JSON.parse(localStorage.getItem('user'));
-  const email = obj[0].email;
-  const firstName = obj[0].firstName;
-  const lastName = obj[0].lastName;
-  const id = obj[0].id;
-  const gender = obj[0].gender;
-  const month = obj[0].month;
-  const day = obj[0].day;
-  const year = obj[0].year;
-  const password = obj[0].password;
-  const URL = "https://google-frontend.herokuapp.com/users/" + id;
 
   const [value, setValue] = useState({
     firstName: firstName,
@@ -80,7 +69,7 @@ export default function Gender() {
       }
       localStorage.setItem("user", JSON.stringify(userObject));
       setTimeout(function () {
-        window.location.href = "http://paq000.github.io/Google/myaccount/personalinfo/";
+        window.location.href = "/Google/myaccount/personalinfo/";
       }, 250);
     } catch(error) {
       console.log(error.response.data)

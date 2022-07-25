@@ -6,15 +6,11 @@ import { Helmet } from 'react-helmet';
 import { t } from 'i18next';
 import { ChevronRightIcon } from '@heroicons/react/solid';
 import { ArrowLeftIcon } from '@heroicons/react/solid';
+import { letter, firstName, lastName } from './../index';
 
 import './style.css';
 
 export default function Account() {
-  const obj = JSON.parse(localStorage.getItem('user'));
-  const firstName = obj[0].firstName;
-  const lastName = obj[0].lastName;
-  const letter = firstName.charAt(0).toUpperCase();
-
   return (
     <>
       <Helmet>
@@ -28,7 +24,11 @@ export default function Account() {
           <section className="account-flex">
             <div className="blue-wrap">
               <section className="account-main-wrap">
-                <Welcome letter={letter} firstName={firstName} lastName={lastName} />
+                <Welcome 
+                  letter={letter} 
+                  firstName={firstName} 
+                  lastName={lastName} 
+                />
                 <div className="card-row">
                   <PrivacyAndPersonalization />
                   <PersonalInfo />

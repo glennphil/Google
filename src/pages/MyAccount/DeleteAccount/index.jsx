@@ -35,7 +35,7 @@ export default function DeleteAccount() {
         headers: { "Content-Type": "application/json"},
       });
       setTimeout(function () {
-        window.location.href = "http://paq000.github.io/Google/";
+        window.location.href = "/Google/";
       }, 250);
       localStorage.setItem('user', null);
     } catch(error) {
@@ -117,11 +117,11 @@ const DeleteInput = ({ register, setAgree }) => (
 
 const Buttons = ({ agree }) => (
   <div className="form-button-row">
-    <button className="cancel">
-      <Link to="/myaccount/data-and-personalization/" className="cancel-link no-deco">
+    <Link to="/myaccount/data-and-personalization/">
+      <button className="cancel">
         {t("cancel")}
-      </Link>
-    </button>
+      </button>
+    </Link>
     <button type="submit" className="next uppercase" disabled={!agree}>
       {t("my-account.data-privacy.data-delete.delete_account")}
     </button>

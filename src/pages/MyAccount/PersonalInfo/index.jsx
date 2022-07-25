@@ -5,20 +5,11 @@ import { Arrow } from "../Home";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { t } from 'i18next';
+import { firstName, lastName, month, day, year, gender, email, password } from './../index';
 
 import './style.css';
 
 export default function PersonalInfo() {
-  const obj = JSON.parse(localStorage.getItem('user'));
-  const email = obj[0].email;
-  const firstName = obj[0].firstName;
-  const lastName = obj[0].lastName;
-  const gender = obj[0].gender;
-  const month = obj[0].month;
-  const day = obj[0].day;
-  const year = obj[0].year;
-  const password = obj[0].password;
-
   return (
     <>
       <Helmet>

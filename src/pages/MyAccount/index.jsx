@@ -1,0 +1,12 @@
+export const obj = JSON.parse(localStorage.getItem('user'));
+export const email = obj[0].email;
+export const firstName = obj[0].firstName;
+export const lastName = obj[0].lastName;
+export const gender = obj[0].gender;
+export const month = obj[0].month;
+export const day = obj[0].day;
+export const year = obj[0].year;
+export const password = obj[0].password;
+export const id = obj[0].id;
+export const letter = firstName.charAt(0).toUpperCase();
+export const URL = "https://google-frontend.herokuapp.com/users/" + id;
