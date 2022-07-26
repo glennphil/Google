@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { Information, Back, ErrorLogo } from '..';
+import { Information, Back } from '..';
 import { t } from 'i18next';
 import { useContext } from 'react';
 import { UserContext } from '../../../../usercontext';
+import { ErrorLogo } from '../../index';
 
 export default function Form({ value, setValue, register, handleSubmit, errors, watch, Next }) {
   const { setUser } = useContext(UserContext);

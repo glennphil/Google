@@ -1,18 +1,27 @@
-import AccountHeader from "../../../components/MyAccount/Header";
 import axios from "axios";
 import { t } from 'i18next';
 import { ErrorLogo } from "../../SignUp/Email";
-import { BackArrow, Cancel } from "../Home";
+import { Cancel, FormChangePage } from "../Home";
 import { useState, useContext } from 'react';
 import { UserContext } from "../../../usercontext";
 import { useForm } from "react-hook-form";
-import { Helmet } from "react-helmet";
 import { UsersIcon } from "@heroicons/react/solid";
-import { firstName, lastName, email, id, gender, month, day, year, password, URL } from './../index';
 
 import './style.css';
 
 export default function Name() {
+  const obj = JSON.parse(localStorage.getItem('user'));
+  const email = obj[0].email;
+  const firstName = obj[0].firstName;
+  const lastName = obj[0].lastName;
+  const gender = obj[0].gender;
+  const month = obj[0].month;
+  const day = obj[0].day;
+  const year = obj[0].year;
+  const password = obj[0].password;
+  const id = obj[0].id;
+  const URL = "https://google-frontend.herokuapp.com/users/" + id;
+
   const { setUser } = useContext(UserContext);
 
   const [value, setValue] = useState({
@@ -89,66 +98,38 @@ export default function Name() {
   });
 
   return (
-    <>
-      <Helmet>
-        <title>{t("my-account.personal-info.personal-name.name")}</title>
-      </Helmet>
-      <AccountHeader />
-      <div className="form-bord-bot" />
-      <section className="account-page-row-blue">
-        <SubHeading />
-        <section className="account-flex-form-wrap">
-          <section className="account-flex-form">
-            <TopNote />
-            <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <FirstName
-                value={value}
-                handleChange={handleChange}
-                register={register}
-                errors={errors}
-              />
-              <LastName
-                value={value}
-                handleChange={handleChange}
-                register={register}
-                errors={errors}
-              />
-              <NameErrors
-                errors={errors}
-              />
-              <Note />
-              <Buttons 
-                firstName={firstName}
-                lastName={lastName}
-                value={value}
-              />
-            </form>
-          </section>
-        </section>
-       </section>
-    </>
+    <FormChangePage
+      title={t("my-account.personal-info.personal-name.name")}
+      subheadPath="/myaccount/personalinfo/"
+      topnote={t("my-account.personal-info.personal-name.top_note")}
+    >
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <FirstName
+          value={value}
+          handleChange={handleChange}
+          register={register}
+          errors={errors}
+        />
+        <LastName
+          value={value}
+          handleChange={handleChange}
+          register={register}
+          errors={errors}
+        />
+        <NameErrors
+          errors={errors}
+        />
+        <Note />
+        <Buttons 
+          firstName={firstName}
+          lastName={lastName}
+          value={value}
+        />
+      </form>
+    </FormChangePage>
+
   )
 }
-
-const SubHeading = () => (
-  <div className="nav-contain-blue nav-contain-no-bord">
-    <div className="navbar-form-wrap">
-      <div className="account-subhead">
-        <BackArrow />
-        <div className="account-subhead-text">{t("my-account.personal-info.personal-name.name")}</div>
-      </div>
-    </div>
-  </div>
-)
-
-const TopNote = () => (
-  <div className="top-note">
-      {t("my-account.personal-info.personal-name.top_note")}&nbsp;
-    <a href="https://support.google.com/accounts/answer/27442" target="_blank" rel="noreferrer" className="learn-more">
-      {t("more_information")}
-    </a>
-  </div>
-)
 
 const FirstName = ({ register, handleChange, value, errors }) => (
   <div className="input-container">

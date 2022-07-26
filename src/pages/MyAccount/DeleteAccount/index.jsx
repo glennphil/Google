@@ -1,12 +1,10 @@
-import AccountHeader from "../../../components/MyAccount/Header";
 import axios from "axios";
 import { t } from 'i18next';
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState, useContext } from 'react';
 import { UserContext } from "../../../usercontext";
-import { Helmet } from "react-helmet";
-import { ArrowLeftIcon } from "@heroicons/react/solid";
+import { FormChangePage } from "../Home";
 
 export default function DeleteAccount() {
   const [agree, setAgree] = useState(false);
@@ -46,56 +44,24 @@ export default function DeleteAccount() {
   }
 
   return (
-    <>
-      <Helmet>
-        <title>{t("my-account.data-privacy.data-delete.delete_account")}</title>
-      </Helmet>
-      <AccountHeader />
-      <div className="form-bord-bot" />
-      <section className="account-page-row-blue">
-        <SubHeading />
-        <section className="account-flex-form-wrap">
-          <SubHeadNote />
-          <section className="account-flex-form">
-            <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <DeleteInput 
-                register={register}
-                setAgree={setAgree}
-              />
-              <Buttons
-                agree={agree}
-              />
-            </form>
-          </section>
-        </section>
-       </section>
-    </>
+    <FormChangePage
+      title={t("my-account.data-privacy.data-delete.delete_account")}
+      subheadPath="/myaccount/data-and-personalization/"
+      note={t("my-account.data-privacy.data-delete.subheading")}
+      notePath="https://support.google.com/accounts/answer/27442"
+    >
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <DeleteInput 
+          register={register}
+          setAgree={setAgree}
+        />
+        <Buttons
+          agree={agree}
+        />
+    </form>
+    </FormChangePage>
   )
 }
-
-const SubHeading = () => (
-  <div className="nav-contain-blue nav-contain-no-bord">
-    <div className="navbar-form-wrap">
-      <div className="account-subhead">
-        <Link to="/myaccount/data-and-personalization/">
-          <div className="back-arrow">
-            <ArrowLeftIcon className="back-arrow-icon"/>
-          </div>
-        </Link>
-        <div className="account-subhead-text">
-          {t("my-account.data-privacy.data-delete.delete_account")}
-        </div>
-      </div>
-    </div>
-  </div>
-)
-
-const SubHeadNote = () => (
-  <div className="top-note subhead-note font-16">
-    {t("my-account.data-privacy.data-delete.subheading")}&nbsp;
-    <a href="https://support.google.com/accounts/answer/27442" target="_blank" rel="noreferrer" className="learn-more">{t("more_information")}</a>
-  </div>
-)
 
 const DeleteInput = ({ register, setAgree }) => (
   <div className="input-container">
@@ -113,7 +79,7 @@ const DeleteInput = ({ register, setAgree }) => (
       {t("my-account.data-privacy.data-delete.delete_confirm")}
     </label>
   </div>
-)
+);
 
 const Buttons = ({ agree }) => (
   <div className="form-button-row">
@@ -126,4 +92,4 @@ const Buttons = ({ agree }) => (
       {t("my-account.data-privacy.data-delete.delete_account")}
     </button>
   </div>
-)
+);

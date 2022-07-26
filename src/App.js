@@ -21,7 +21,7 @@ export default function App() {
 
   const UserRoute = () => {
     let user = JSON.parse(localStorage.getItem('user'));
-    if (user === null) {
+    if (user !== null) {
       return <Outlet />
     }
     return <Navigate to="/myaccount/" />
@@ -29,7 +29,7 @@ export default function App() {
 
   const NoUserRoute = () => {
     let user = JSON.parse(localStorage.getItem('user'));
-    if (user !== null) {
+    if (user === null) {
       return <Outlet />
     }
     return <Navigate to="/signin/" />
@@ -47,11 +47,11 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Search />} />
             <Route path="*" element={<PageNotFound />} />
-            <Route element={<UserRoute />}>
+            <Route element={<NoUserRoute />}>
               <Route path="/signin/" element={<SignIn />} />
               <Route path="/signup/" element={<SignUp />} />
             </Route>
-            <Route element={<NoUserRoute />}>
+            <Route element={<UserRoute />}>
               <Route path="/myaccount/" element={<Account />}/>
               <Route path="/myaccount/personalinfo/" element={<PersonalInfo />} />
               <Route path="/myaccount/data-and-personalization/" element={<DataPrivacy />} />

@@ -1,16 +1,25 @@
-import AccountHeader from "../../../components/MyAccount/Header";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useState, useContext } from 'react';
 import { UserContext } from "../../../usercontext";
-import { Helmet } from "react-helmet";
-import { BackArrow, Cancel } from "../Home";
-import { firstName, lastName, email, id, gender, month, day, year, password, URL } from './../index';
+import { Cancel, FormChangePage } from "../Home";
 
 import './style.css';
 import { t } from "i18next";
 
 export default function Gender() {
+  const obj = JSON.parse(localStorage.getItem('user'));
+  const email = obj[0].email;
+  const firstName = obj[0].firstName;
+  const lastName = obj[0].lastName;
+  const gender = obj[0].gender;
+  const month = obj[0].month;
+  const day = obj[0].day;
+  const year = obj[0].year;
+  const password = obj[0].password;
+  const id = obj[0].id;
+  const URL = "https://google-frontend.herokuapp.com/users/" + id;
+
   const { setUser } = useContext(UserContext);
 
   const [value, setValue] = useState({
@@ -86,61 +95,27 @@ export default function Gender() {
   }
 
   return (
-    <>
-      <Helmet>
-        <title>{t("my-account.personal-info.personal-gender.gender")}</title>
-      </Helmet>
-      <AccountHeader />
-      <div className="form-bord-bot" />
-      <section className="account-page-row-blue">
-        <SubHeading />
-        <section className="account-flex-form-wrap">
-          <SubHeadNote />
-          <section className="account-flex-form">
-            <TopNote />
-            <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <GenderInput 
-                register={register}
-                handleChange={handleChange}
-                value={value}
-              />
-              <Buttons 
-                value={value}
-                gender={gender}
-              />
-            </form>
-          </section>
-        </section>
-       </section>
-    </>
+    <FormChangePage
+      title={t("my-account.personal-info.personal-gender.gender")}
+      subheadPath="/myaccount/personalinfo/"
+      note={t("my-account.personal-info.personal-gender.top_note")}
+      notePath="https://support.google.com/accounts/answer/27442"
+      topnote={t("my-account.personal-info.personal-gender.gender")}
+    >
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <GenderInput 
+          register={register}
+          handleChange={handleChange}
+          value={value}
+        />
+        <Buttons 
+          value={value}
+          gender={gender}
+        />
+      </form>
+    </FormChangePage>
   )
 }
-
-const SubHeading = () => (
-  <div className="nav-contain-blue nav-contain-no-bord">
-    <div className="navbar-form-wrap">
-      <div className="account-subhead">
-        <BackArrow />
-        <div className="account-subhead-text">{t("my-account.personal-info.personal-gender.gender")}</div>
-      </div>
-    </div>
-  </div>
-)
-
-const SubHeadNote = () => (
-  <div className="top-note subhead-note font-16">
-    {t("my-account.personal-info.personal-gender.top_note")}&nbsp;
-    <a href="https://support.google.com/accounts/answer/27442" target="_blank" rel="noreferrer" className="learn-more">
-      {t("more_information")}
-    </a>
-  </div>
-)
-
-const TopNote = () => (
-  <div className="top-note font-12 uppercase">
-    {t("my-account.personal-info.personal-gender.gender")}
-  </div>
-)
 
 const GenderInput = ({ register, handleChange }) => (
   <div className="input-container">

@@ -1,16 +1,25 @@
-import AccountHeader from "../../../components/MyAccount/Header";
 import axios from "axios";
 import { t } from 'i18next';
 import { useForm } from "react-hook-form";
-import { BackArrow, Cancel } from "../Home";
+import { Cancel, FormChangePage } from "../Home";
 import { useState, useContext } from 'react';
 import { UserContext } from "../../../usercontext";
-import { Helmet } from "react-helmet";
-import { firstName, lastName, email, id, gender, month, day, year, password, URL } from './../index';
 
 import './style.css';
 
 export default function Birthday() {
+  const obj = JSON.parse(localStorage.getItem('user'));
+  const email = obj[0].email;
+  const firstName = obj[0].firstName;
+  const lastName = obj[0].lastName;
+  const gender = obj[0].gender;
+  const month = obj[0].month;
+  const day = obj[0].day;
+  const year = obj[0].year;
+  const password = obj[0].password;
+  const id = obj[0].id;
+  const URL = "https://google-frontend.herokuapp.com/users/" + id;
+
   const { setUser } = useContext(UserContext);
 
   const [value, setValue] = useState({
@@ -88,78 +97,44 @@ export default function Birthday() {
   }
 
   return (
-    <>
-      <Helmet>
-        <title>{t("my-account.personal-info.personal-birthday.birthday")}</title>
-      </Helmet>
-      <AccountHeader />
-      <div className="form-bord-bot" />
-      <section className="account-page-row-blue">
-      <SubHeading />
-        <section className="account-flex-form-wrap">
-          <SubHeadNote />
-          <section className="account-flex-form">
-            <TopNote />
-            <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <div className="birthday-row-change">
-                <Month
-                  value={value}
-                  handleChange={handleChange}
-                  register={register}
-                  errors={errors}
-                />
-                <Day
-                  value={value}
-                  handleChange={handleChange}
-                  register={register}
-                  errors={errors}
-                />
-                <Year
-                  value={value}
-                  handleChange={handleChange}
-                  register={register}
-                  errors={errors}
-                />
-              </div>
-              <Buttons 
-                month={month}
-                day={day}
-                year={year}
-                value={value}
-              />
-            </form>
-          </section>
-        </section>
-       </section>
-    </>
+    <FormChangePage
+      title={t("my-account.personal-info.personal-birthday.birthday")}
+      subheadPath="/myaccount/personalinfo/"
+      note={t("my-account.personal-info.personal-birthday.top_note")}
+      notePath="https://support.google.com/accounts/answer/27442"
+      topnote={t("my-account.personal-info.personal-birthday.update_birthday")}
+    >
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <div className="birthday-row-change">
+          <Month
+            value={value}
+            handleChange={handleChange}
+            register={register}
+            errors={errors}
+          />
+          <Day
+            value={value}
+            handleChange={handleChange}
+            register={register}
+            errors={errors}
+          />
+          <Year
+            value={value}
+            handleChange={handleChange}
+            register={register}
+            errors={errors}
+          />
+        </div>
+        <Buttons 
+          month={month}
+          day={day}
+          year={year}
+          value={value}
+        />
+      </form>
+    </FormChangePage>
   )
 }
-
-const SubHeading = () => (
-  <div className="nav-contain-blue nav-contain-no-bord">
-    <div className="navbar-form-wrap">
-      <div className="account-subhead">
-        <BackArrow />
-        <div className="account-subhead-text">{t("my-account.personal-info.personal-birthday.birthday")}</div>
-      </div>
-    </div>
-  </div>
-)
-
-const SubHeadNote = () => (
-  <div className="top-note subhead-note font-16">
-    {t("my-account.personal-info.personal-birthday.top_note")}&nbsp;
-    <a href="https://support.google.com/accounts/answer/27442" target="_blank" rel="noreferrer" className="learn-more">
-      {t("more_information")}
-    </a>
-  </div>
-)
-
-const TopNote = () => (
-  <div className="top-note font-12 uppercase">
-    {t("my-account.personal-info.personal-birthday.update_birthday")}
-  </div>
-)
 
 const Month = ({ register, handleChange, value }) => (
   <div className="input-container">
